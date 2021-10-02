@@ -14,7 +14,7 @@ let image = new Image();
 image.src = "./yvanehtnioj.jpeg";
 var userText = "";
 
-listenForKeyUp = () => {
+const listenForKeyUp = () => {
   userInput.addEventListener("keyup", (evt) => {
     // redraw the image with each keystroke
     ctx.drawImage(image, 0, 0);
@@ -26,7 +26,7 @@ listenForKeyUp = () => {
   });
 };
 
-writeToCanvas = () => {
+const writeToCanvas = () => {
   ctx.font = "40px Arial";
   ctx.textAlign = "center";
   ctx.fillStyle = "black";
@@ -48,4 +48,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     listenForKeyUp();
   };
+});
+
+// Download image by clicking button
+download = document.getElementById("download");
+download.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = "subliminal-meme.png";
+  link.href = canvas.toDataURL();
+  link.click();
+  link.delete;
 });
