@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Yvan Eht Nioj meme generator</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    form {
+        margin: 20px;
+    }
+    input {
+        width: 400px;
+    }
+</style>
+
   </head>
   <body id="body">
     <h1>Yvan Eht Nioj meme generator</h1>
     <p>
-      Enter your message in the box, and watch as YEN turns it into a devilish
+      Enter your message in the box, and watch it turn into a devilishly delightful
       subliminal message
     </p>
     <div>
@@ -46,7 +58,8 @@
         userInput.addEventListener("keyup", (evt) => {
             // redraw the image with each keystroke
             ctx.drawImage(image, 0, 0);
-            userText = userInput.value;
+            // reverse the user's text
+            userText = (userInput.value).split("").reverse().join("");
             console.log(userText);
 
             writeToCanvas()
