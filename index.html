@@ -4,36 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
-    <title>Yvan Eht Nioj meme generator</title>
-
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./stylesheet.css">
+    <title>Yvan Eht Nioj Meme Generator</title>
   </head>
-  <body id="body">
-    <h1 class="display-1 text-center">Yvan Eht Nioj meme generator</h1>
-    <p class="text-center">
-      Enter your message in the box, and watch it turn into a devilishly delightful
-      subliminal message
+  <body class="container">
+    <h1 class="text-center p-3">YVAN EHT NIOJ<br>meme generator</h1>
+    <p class="text-center mb-1 text-white">
+      Enter your message in the box, and watch it turn into a devilishly
+      delightful subliminal message
     </p>
-    <div>
-      <form onsubmit="return false">
-        <input type="text" id="user-input" />
+
+    <div class="d-flex justify-content-center">
+      <form onsubmit="return false" class="col-md-6 pb-3">
+        <label for="user-input" class="form-label">Message:</label>
+        <input
+          type="text"
+          id="user-input"
+          class="form-control"
+          placeholder="e.g. Join the navy"
+        />
       </form>
     </div>
 
-    <div>
-      <canvas id="meme-image">
-        Sorry, your browser is not compatible. Ensure JavaScript is enabled and
-        that your broser version is up to date.
-      </canvas>
-      <p>
-        <button id="download" class="btn btn-primary">Download meme</button>
-      </p>
+    <div class="justify-content-center">
+      <div class="d-flex justify-content-center col-12">
+        <canvas id="meme-image" class="">
+          Sorry, your browser is not compatible. Ensure JavaScript is enabled and
+          that your broser version is up to date.
+        </canvas>
+      </div>
+
+      <div class="d-flex justify-content-center col-12 p-2">
+        <button id="download" class="btn">DOWNLOAD</button>
+      </div>
     </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>
