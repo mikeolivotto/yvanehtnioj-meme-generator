@@ -8,9 +8,10 @@
 
 body {
     background-color: #1e2430;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, p, button {
+h1, h2, button {
     font-family: akbarplain, Arial, sans-serif;
     font-weight:normal;
     font-style:normal;
@@ -25,4 +26,8 @@ h1, p, button {
 
 #generate-meme {
     max-width: 640px;
+}
+
+.strike {
+    text-decoration: line-through;
 }
