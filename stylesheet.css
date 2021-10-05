@@ -22,3 +22,7 @@ h1, p, button {
     color: #f8d62a;
     border-color: #f8d62a;
 }
+
+#generate-meme {
+    max-width: 640px;
+}
