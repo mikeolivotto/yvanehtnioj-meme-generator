@@ -11,7 +11,7 @@ let canvas = document.getElementById("meme-image");
 let ctx = canvas.getContext("2d");
 let userInput = document.getElementById("user-input");
 let image = new Image();
-image.src = "./yvanehtnioj.jpeg";
+image.src = "./img/yvanehtnioj.jpeg";
 var userText = "";
 
 const listenForKeyUp = () => {

@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KN5STKV');</script>
-  <!-- End Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KN5STKV");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,16 +30,30 @@
       content="Create devilishly delightful Simpsons-style subliminal messages. The meme generator automatically reverses your message and makes it available for download."
     />
     <meta property="og:title" content="Yvan Eht Nioj Meme Generator" />
-    <!-- <meta property="og:image" content="URL OF IMAGE ONLY" /> -->
+    <meta property="og:image" content="./img/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="320" />
+    <meta property="og:image:alt" content="Singer from the Yvan Eht Nioj Simpsons film clip" />
+ 
     <meta property="og:url" content="https://yvanehtnioj.com/" />
-    <meta property="og:description" content="Create devilishly delightful Simpsons-style subliminal messages. The meme generator automatically reverses your message and makes it available for download." />
+    <meta
+      property="og:description"
+      content="Create devilishly delightful Simpsons-style subliminal messages. The meme generator automatically reverses your message and makes it available for download."
+    />
     <title>Yvan Eht Nioj Simpsons Meme Generator</title>
   </head>
   <body class="container">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN5STKV"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KN5STKV"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <h1 class="text-center p-3">YVAN EHT NIOJ<br />meme generator</h1>
     <p class="text-center mb-1 text-white">
       Enter your message in the box, and watch it turn into a devilishly
@@ -50,7 +71,6 @@
         />
       </form>
     </div>
-
     <div class="justify-content-center">
       <div class="d-flex justify-content-center col-12">
         <canvas id="meme-image" class="">
@@ -58,12 +78,10 @@
           and that your broser version is up to date.
         </canvas>
       </div>
-
       <div class="d-flex justify-content-center col-12 p-2">
         <button id="download" class="btn">DOWNLOAD</button>
       </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
