@@ -10,14 +10,13 @@
 // setup image and set its ratio
 const image = new Image();
 image.src = "./img/yvanehtnioj.jpeg";
-console.log("image width: "+image.width)
 const imageRatio = image.height / image.width;
-const screenWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
 
 // setup the canvas and context
 const canvas = document.getElementById("meme-image");
 const ctx = canvas.getContext("2d");
-canvas.width = screenWidth
+canvas.width = (image.width > window.innerWidth) ? (window.innerWidth)*0.95 : image.width;
 canvas.height = canvas.width * imageRatio
 
 // get user input
@@ -27,7 +26,7 @@ var userText = "";
 const listenForKeyUp = () => {
   userInput.addEventListener("keyup", (evt) => {
     // redraw the image with each keystroke
-    ctx.drawImage(image, 0, 0, screenWidth, canvas.width * imageRatio);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     // reverse the user's text
     userText = userInput.value.split("").reverse().join("");
 
@@ -52,7 +51,7 @@ const writeToCanvas = () => {
 window.addEventListener("DOMContentLoaded", function () {
   image.onload = function () {
 
-    ctx.drawImage(image, 0, 0, screenWidth, canvas.width * imageRatio);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
     listenForKeyUp();
   };
