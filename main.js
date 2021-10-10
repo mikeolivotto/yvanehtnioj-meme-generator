@@ -5,22 +5,31 @@
   3. Reset the canvas to the base image, then add the value of the input
       Base image must be reset, else each new keyup draws another word to 
       the canvas eg "T", "TE", "TES", "TEST" all over the top of each other
-  */
+      */
 
-let canvas = document.getElementById("meme-image");
-let ctx = canvas.getContext("2d");
-let userInput = document.getElementById("user-input");
-let image = new Image();
+// setup image and set its ratio
+const image = new Image();
 image.src = "./img/yvanehtnioj.jpeg";
+console.log("image width: "+image.width)
+const imageRatio = image.height / image.width;
+const screenWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+// setup the canvas and context
+const canvas = document.getElementById("meme-image");
+const ctx = canvas.getContext("2d");
+canvas.width = screenWidth
+canvas.height = canvas.width * imageRatio
+
+// get user input
+const userInput = document.getElementById("user-input");
 var userText = "";
 
 const listenForKeyUp = () => {
   userInput.addEventListener("keyup", (evt) => {
     // redraw the image with each keystroke
-    ctx.drawImage(image, 0, 0);
+    ctx.drawImage(image, 0, 0, screenWidth, canvas.width * imageRatio);
     // reverse the user's text
     userText = userInput.value.split("").reverse().join("");
-    console.log(userText);
 
     writeToCanvas();
   });
@@ -42,9 +51,8 @@ const writeToCanvas = () => {
 
 window.addEventListener("DOMContentLoaded", function () {
   image.onload = function () {
-    canvas.width = image.width;
-    canvas.height = image.height;
-    ctx.drawImage(image, 0, 0);
+
+    ctx.drawImage(image, 0, 0, screenWidth, canvas.width * imageRatio);
 
     listenForKeyUp();
   };
