@@ -1,23 +1,22 @@
-/*
-  NOTES:
-  1. Upon window loading, setup the canvas (set size, draw base image)
-  2. Listen for a Key up (ie. once the value in the input updates)
-  3. Reset the canvas to the base image, then add the value of the input
-      Base image must be reset, else each new keyup draws another word to 
-      the canvas eg "T", "TE", "TES", "TEST" all over the top of each other
-      */
-
-// setup image and set its ratio
-const image = new Image();
-image.src = "./img/yvanehtnioj.jpeg";
-const imageRatio = image.height / image.width;
-
-
 // setup the canvas and context
 const canvas = document.getElementById("meme-image");
 const ctx = canvas.getContext("2d");
-canvas.width = (image.width > window.innerWidth) ? (window.innerWidth)*0.95 : image.width;
-canvas.height = canvas.width * imageRatio
+
+const image = new Image();
+
+window.onload = function () {
+  // setup image and set its ratio
+  image.src = "./img/yvanehtnioj.jpeg";
+
+  image.onload = function () {
+    canvas.width =
+      image.width > window.innerWidth ? window.innerWidth * 0.95 : image.width;
+    const imageRatio = image.height / image.width;
+    canvas.height = canvas.width * imageRatio;
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    listenForKeyUp();
+  };
+};
 
 // get user input
 const userInput = document.getElementById("user-input");
@@ -35,27 +34,27 @@ const listenForKeyUp = () => {
 };
 
 const writeToCanvas = () => {
-  ctx.font = "40px Arial";
+  // need to calculate the percentage the canvas resizes for smaller devices
+  const sizeReducer =
+    image.width > window.innerWidth
+      ? (window.innerWidth * 0.95) / image.width
+      : 1;
+  // reduce the font size when resized
+  let fontSize = 40 * sizeReducer;
+  // adjust the offset when resized
+  let shadowOffset = 3 * sizeReducer;
+  ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
   ctx.fillStyle = "black";
   ctx.fillText(
     userText.toUpperCase(),
-    canvas.width / 2 + 3,
-    canvas.height * 0.87 + 3
+    canvas.width / 2 + shadowOffset,
+    canvas.height * 0.87 + shadowOffset
   );
 
   ctx.fillStyle = "white";
   ctx.fillText(userText.toUpperCase(), canvas.width / 2, canvas.height * 0.87);
 };
-
-window.addEventListener("DOMContentLoaded", function () {
-  image.onload = function () {
-
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-    listenForKeyUp();
-  };
-});
 
 // Download image by clicking button
 download = document.getElementById("download");
