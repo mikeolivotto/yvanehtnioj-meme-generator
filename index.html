@@ -53,7 +53,7 @@
   </head>
 
 
-  <body class="container d-flex flex-wrap justify-content-center">
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -64,41 +64,56 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <h1 class="text-center p-3 w-100">YVAN EHT NIOJ<br />meme generator</h1>
-    <div class="d-flex w-100 justify-content-center">
-      <p class="text-center col-lg-7 instructions">Enter your message in the box, and watch it turn into a devilishly delightful subliminal message</p>
-    </div>
-    
-    
-      <div id="generate-meme" class="d-flex justify-content-center mb-3">
-        <form onsubmit="return false" class="d-inline-block pe-3">
-          <!-- <label for="user-input" class="form-label  text-white">Message:</label> -->
-          <input
-            type="text"
-            id="user-input"
-            class="form-control"
-            placeholder="e.g. Join the navy"
-          />
-        </form>
-        <button id="download" class="btn">DOWNLOAD</button>
+    <!-- <nav class="navbar navbar-light col-12">
+      <div class="container-fluid">
+        <h1><span class="mb-0">Yvan Eht Nioj<br> Meme Generator</span></h1>
       </div>
-    
-      <div class="d-flex justify-content-center col-12 mb-3">
-        <canvas id="meme-image" class="">
-          Sorry, your browser is not compatible. Ensure JavaScript is enabled
-          and that your browser version is up to date.
-        </canvas>
+    </nav> -->
+
+<div class="container d-flex flex-wrap justify-content-center">
+  
+      <h1 class="text-center p-3 w-100">YVAN EHT NIOJ<br />meme generator</h1>
+      <div class="d-flex w-100 justify-content-center">
+        <p class="text-center col-lg-7 instructions">Enter a message in the box, and watch it turn into a devilishly delightful subliminal message</p>
       </div>
+  
+  
+  
+        <div class="d-flex justify-content-center col-12 mb-3">
+          <canvas id="meme-image" class="">
+            Sorry, your browser is not compatible. Ensure JavaScript is enabled
+            and that your browser version is up to date.
+          </canvas>
+        </div>
+  
+  
+        <div id="generate-meme" class="d-flex justify-content-center col-12 mb-3">
+          <form onsubmit="return false" class="d-inline-block pe-3">
+            <!-- <label for="user-input" class="form-label  text-white">Message:</label> -->
+            <input
+              type="text"
+              id="user-input"
+              class="form-control"
+              placeholder="e.g. Join the navy"
+            />
+          </form>
+          <button id="download" class="btn">DOWNLOAD</button>
+        </div>
+  
+        <div class="faq col-lg-7">
+          <h2>What does Yvan Eht Nioj mean?</h2>
+  
+          <p>Taken from S12E14 of The Simpsons ('New Kids on the Blecch'), Yvan Eht Nioj is a reversal of the phrase 'Join The Navy'. The subliminal message is the catchy chorus to the song <em>Drop Da Bomb</em> by Party Posse, the boy band consisting of Bart Simpson, Milhouse Van Houten, Nelson Muntz, Ralph Wiggum. </p>
+  
+          <h2>Could you explain your generator, young man?</h2>
+          <p>Well, basically I just copied meme generators we have now. Then I added some text-reverse to lower wind resistance. And this Simpsons font here I feel is pretty sharp.</p>
+
+          <h2>How does the meme generator work?</h2>
+          <p>Type a message into the box and the meme generator will automatically reverse the text for you. Once you're happy, hit the download button and your Simpsons meme will be saved as a PNG for your memeing pleasure.</p>
 
 
-      <div class="faq col-lg-7">
-        <h2>What does Yvan Eht Nioj mean?</h2>
-
-        <p>Taken from S12E14 of The Simpsons ('New Kids on the Blecch'), Yvan Eht Nioj is a reversal of the phrase 'Join The Navy'. The subliminal message is used as the refrain to the song <em>Drop Da Bomb</em> by Party Posse, the boy band consisting of Bart Simpson, Milhouse Van Houten, Nelson Muntz, Ralph Wiggum. </p>
-
-        <h2>Could you explain your generator, young man?</h2>
-        <p>Well, basically I just copied meme generators we have now. Then I added some text-reverse to lower cognitive resistance. And this Simpsons font here I feel is pretty sharp.</p>
-      </div>
+        </div>
+</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
