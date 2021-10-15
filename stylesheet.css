@@ -8,9 +8,10 @@
 
 body {
     background-color: #1e2430;
+    /* background-color: #3fb0fc; */
     font-family: Arial, Helvetica, sans-serif;
-    /* color: #fff2ce; */
-    color: white;
+    color: #fff8e3;
+
 }
 
 h1, h2, button {
@@ -40,5 +41,5 @@ h1, h2, button {
 }
 
 canvas {
-    border: 5px solid white;
+    border: 5px solid #fff2ce;
 }
